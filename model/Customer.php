@@ -1,26 +1,37 @@
 <?php
 
 
+declare(strict_types = 1);
+class Group
+{
+}
 
-declare(strict_types=1);
-class Group {}
 class Customer
 {
     private $id;
     private $name;
     private $group;
-    function __construct(int $id, string $name, Group $group)
+
+    function __construct(int $_id, string $_name, Group $_group)
+        // function to create objects and pass the parameters
     {
-        $this->id = $id;
-        $this->name = $name;
-        $this->group = $group;
+        //pass the parameters to the objects from the class id,name,group
+        $this->id = $_id;
+        $this->name = $_name;
+        $this->group = $_group;
     }
-    public function getId() : int
+
+    public function getId(): int // function/method to get the private property: variable in this case id
     {
         return $this->id;
     }
-    public function getName() : string
+
+    public function getName(): string
     {
         return $this->name;
+    }
+
+    public function getGroup() {
+    return $this->group;
     }
 }
