@@ -6,7 +6,7 @@ class Group
 {
 }
 
-class Customer
+class Customer//to create value objects has values and methods
 {
     private $id;
     private $name;

@@ -1,23 +1,27 @@
 <?php
 declare(strict_types=1);
 
-class CustomerLoader
+class CustomerLoader //create domain objects which is very important //it is the database
 {
     public function loadeById(int $customerId): Customer
     {
         $json = json_decode(file_get_contents('../jsonfiles/customers.json'), true);
-        foreach ($json AS $customerJson) {
-            if ($customerJson['id'] === $customerId) {
-                return new Customer($customerJson['id'], $customerJson['name'], new Group);
+        foreach ($json AS $customerJson) { // loop over json file array, make object from customer in array.
+            if ($customerJson['id'] === $customerId) { // compare the give id , with the id in customer array
+            // return an object from give ID, based on Customer class
+                return new Customer($customerJson['id'], $customerJson['name'], new Group); // properties are predetermined in caas Customer
+                // the property GROUP, is also an object
+
             }
         }
     }
 
-    public function loadCustomers(): array
+    public function loadCustomers(): array//function/method to load all the json file
     {
         $list = [];
         $json = json_decode(file_get_contents('../jsonfiles/customers.json'), true);
         foreach ($json AS $customerJson) {
+            //create object for every json save it in list
             $list[] = new Customer($customerJson['id'], $customerJson['name'], new Group);
         }
     }
