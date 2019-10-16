@@ -8,11 +8,14 @@ error_reporting(E_ALL);
 require 'controller/HomeController.php';
 require 'model/Customer.php';
 require 'model/CustomerLoader.php';
+if(!isset($_GET['customerId'])) {
+    $_GET['customerId'] = 5;
+}
 
 $controller = new HomeController();
 $controller->render((int)$_GET['customerId']);
 ?>
-/*
+
 <!--
 <!DOCTYPE html>
 <html>

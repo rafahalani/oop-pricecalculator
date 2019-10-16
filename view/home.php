@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,8 +8,9 @@
     <title>view</title>
 </head>
 <body>
-<h2> Your name <?php echo $customer->getName();
-                       echo     $customer->getId();
-?> </h2>
+<h2> Your name : <?php echo '<br>' . $customer->getName() . '<br>';
+    echo '<br>' . $customer->getId();
+    ?>
+</h2>
 </body>
-</html>
+
