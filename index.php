@@ -9,6 +9,7 @@ require 'controller/HomeController.php';
 require 'model/Customer.php';
 require 'model/CustomerLoader.php';
 if(!isset($_GET['customerId'])) {
+
     $_GET['customerId'] = 5;
 }
 
