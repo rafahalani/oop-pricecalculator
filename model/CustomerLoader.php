@@ -1,6 +1,35 @@
 <?php
 declare(strict_types=1);
 
+class CustomerLoader
+{
+    public function loadCustomers(): array
+    {
+        $list = [];
+        $json = json_decode(file_get_contents('data/customers.json'), true);
+        foreach ($json AS $customerJson) {
+            $list[] = new Customer($customerJson['id'], $customerJson['name'], $customerJson['group_id']);
+
+        }
+        return $list;
+
+    }
+
+    public function loadById(int $customerId):? Customer
+    {
+        $json = json_decode(file_get_contents('data/customers.json'), true);
+        foreach ($json AS $customerJson) {
+            if ($customerJson['id'] === $customerId) {
+               return new Customer($customerJson['id'], $customerJson['name'], $customerJson['group_id']);
+            }
+        }
+        return null;
+    }
+
+}
+
+/*
+
 class CustomerLoader //create domain objects which is very important //it is the database
 {
     public function loadeById(int $customerId): Customer
@@ -27,4 +56,4 @@ class CustomerLoader //create domain objects which is very important //it is the
     }
 
 
-}
+}*/

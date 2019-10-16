@@ -1,6 +1,4 @@
-<?php
-require 'controller/customerController.php';
-?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,6 +9,8 @@ require 'controller/customerController.php';
     <title>view</title>
 </head>
 <body>
-<h2> Your name <?php echo $loader; ?> </h2>
+<h2> Your name <?php echo $customer->getName();
+                       echo     $customer->getId();
+?> </h2>
 </body>
 </html>
