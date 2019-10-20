@@ -13,9 +13,9 @@
 <form>
     <div class="dropdown">
 
-        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Names</button>
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">CustomerId</button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-            <li role="presentation">NAME</li>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
             <?php foreach($allCustomers AS $customerItem):?>
                 <li role="presentation"> <?php echo $customerItem->getId() . '<br>';?></li>
             <?php endforeach;?>
@@ -23,7 +23,19 @@
     </div>
 </form>
 
+<form>
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">ProductId</button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 
+            <?php foreach ($allProducts AS $product): ?>
+            <li role="presentation"> <?php echo $product->getId() . '<br>';?></li>
+            <?php endforeach;?>
+        </ul>
+
+
+    </div>
+</form>
 
 
 

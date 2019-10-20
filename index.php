@@ -11,7 +11,8 @@ if(!isset($_GET['customerId'])) {
 }
 
 $controller = new HomeController();
+$controller->render((int)$_GET['customerId']);
 
-    $controller->render((int)$_GET['customerId']);
-
+$productController = new HomeController();
+$productController->productRender((int)$_GET['productId']);
 ?>
