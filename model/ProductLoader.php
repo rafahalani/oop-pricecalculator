@@ -13,7 +13,7 @@ class ProductLoader
         }
         return $list;
     }
-    public function loadById(int $productId):? Customer
+    public function loadProductById(int $productId):? Product
     {
         $json = json_decode(file_get_contents('data/products.json'), true);
         foreach ($json AS $productJson) {// loop over json file array, make object from customer in array.

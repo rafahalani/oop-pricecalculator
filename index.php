@@ -6,13 +6,20 @@ error_reporting(E_ALL);
 require 'controller/HomeController.php';
 require 'model/Customer.php';
 require 'model/CustomerLoader.php';
-if(!isset($_GET['customerId'])) {
-    $_GET['customerId'] = 0;
+require 'model/Product.php';
+require 'model/ProductLoader.php';
+
+if(!isset($_GET['customer'])) {
+    $_GET['customer'] = 0;
+}
+if(!isset($_GET['product'])){
+    $_GET['product']=0;
 }
 
 $controller = new HomeController();
-$controller->render((int)$_GET['customerId']);
+$controller->render((int)$_GET['customer'],(int)$_GET['product']);
 
-$productController = new HomeController();
-$productController->productRender((int)$_GET['productId']);
+
+//$productController = new HomeController();
+//$productController->render((int)$_GET['product']);
 ?>
