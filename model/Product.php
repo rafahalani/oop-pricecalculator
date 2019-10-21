@@ -8,7 +8,7 @@ class Product
     private $description;
     private $price;
 
-    public function __construct($_id, $_name, $_description, $_price)
+    public function __construct(int $_id,string $_name,string $_description,float $_price)
     {
         $this->id = $_id;
         $this->name = $_name;
@@ -17,16 +17,16 @@ class Product
 
     }
 
-    public function getId(){
-        $this->id;
+    public function getId() : int {
+      return  $this->id;
     }
-    public function getName(){
-        $this->name;
+    public function getName() : string {
+      return  $this->name;
     }
-    public function getDescription(){
-        $this->description;
+    public function getDescription() : string {
+       return $this->description;
     }
-    public function getPrice(){
-        $this->price;
+    public function getPrice() : float {
+       return $this->price;
     }
 }

@@ -9,6 +9,9 @@ require 'model/CustomerLoader.php';
 require 'model/Product.php';
 require 'model/ProductLoader.php';
 
+
+$controller = new HomeController();
+
 if(!isset($_GET['customer'])) {
     $_GET['customer'] = 0;
 }
@@ -16,7 +19,7 @@ if(!isset($_GET['product'])){
     $_GET['product']=0;
 }
 
-$controller = new HomeController();
+
 $controller->render((int)$_GET['customer'],(int)$_GET['product']);
 
 
